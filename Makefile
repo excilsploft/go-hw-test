@@ -16,3 +16,8 @@ docker: Dockerfile
 .PHONY: dockerclean
 dockerclean:
 	docker image rm gotest:latest -f
+
+.PHONY: test
+test: hw
+	@./hw "from make"
+
