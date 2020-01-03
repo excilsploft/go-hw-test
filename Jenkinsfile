@@ -3,7 +3,7 @@ node {
 	def myEnv = docker.build 'gotest:latest'
 
 	stage('Build') {
-	  git ${repo}
+	  git repo
 	  myEnv.inside {
 		sh 'make build && make test'
 	  }
